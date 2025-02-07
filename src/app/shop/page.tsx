@@ -2,7 +2,7 @@ import Image from "next/image";
 import PinkSofa from "../../../public/PinkSoFa.png";
 import { ShoppingCart } from "lucide-react";
 import pillow from "../../../public/pilow.png";
-import chair2Pro from "../../../public/chair2popular.png";
+import chair2popular from "../../../public/chair2popular.png";
 import chair3Pro from "../../../public/chair2Pro.jpg";
 import chair4Pro from "../../../public/yellowChair.png";
 import chair5Pro from "../../../public/lastPro.png";
@@ -65,7 +65,7 @@ const Productpage = () => {
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {[
             { src: pillow, alt: "pillow" },
-            { src: chair2Pro, alt: "chair2Pro" },
+            { src: chair2popular, alt: "chair2popular" },
             { src: chair3Pro, alt: "chair3Pro" },
             { src: chair4Pro, alt: "chair4Pro" },
             { src: chair5Pro, alt: "chair5Pro" },

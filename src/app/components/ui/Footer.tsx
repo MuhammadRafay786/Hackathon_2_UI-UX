@@ -191,6 +191,37 @@ export default function Footer() {
               tincidunt erat enim.
             </p>
           </div>
+
+          {/* Contact Us Section */}
+          <div className="w-full md:w-1/4 lg:w-[200px]">
+            <h4 className="text-lg font-semibold text-[#9A9CAA]">Contact Us</h4>
+            <ul className="mt-4 text-[#272343] space-y-2">
+              <li>
+                <a
+                  href="mailto:support@comforty.com"
+                  className="hover:text-[#007580] hover:underline hover:underline-offset-4"
+                >
+                  support@comforty.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+1234567890"
+                  className="hover:text-[#007580] hover:underline hover:underline-offset-4"
+                >
+                  +1 234 567 890
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-[#007580] hover:underline hover:underline-offset-4"
+                >
+                  Contact Form
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
         {/* Footer Bottom */}
@@ -213,6 +244,5 @@ export default function Footer() {
   );
 }
 
-  
-  
- 
+
+
