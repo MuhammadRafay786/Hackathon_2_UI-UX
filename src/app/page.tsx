@@ -1,101 +1,165 @@
-import Image from "next/image";
+// starting my project of hackathon 2 (Muhammad Rafay Shahzad roll no:453475)
+import FeaturedProducts from "./components/ui/FeaturedProducts";
+import Hero from "./components/ui/Hero";
+import Sponsors from "./components/ui/Sponsors";
+import Categories from "./components/ui/TopCategories";
+import PopularStyles from "./components/ui/PopularStyles";
+import ProductList from "./components/ui/OurProducts";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  // Featured Products Data
+  const cardBuild = [
+    {
+      id: 1,
+      heading: "Featured Products",
+      divText: "New",
+      Image1: {
+        src: "/oldChair.jpeg",
+        alt: "Old Chair",
+        width: 312,
+        height: 312,
+      },
+      paragraph: "Library Stool Chair",
+      amount: 20,
+      classNameCart: "bg-[#029FAE]",
+      isDiv: true,
+      link: "/product/old-chair",
+    },
+    {
+      id: 2,
+      divText: "Sales",
+      classNameDiv: "bg-[#F5813F]",
+      Image1: {
+        src: "/sofa_pink_1.png",
+        alt: "Pink Sofa",
+        width: 312,
+        height: 312,
+      },
+      paragraph: "Library Stool Chair",
+      amount: 20,
+      cutamount: 30,
+      classNameCart: "bg-gray-300",
+      isDiv: true,
+      link: "/product/pink-sofa",
+    },
+    {
+      id: 3,
+      Image1: {
+        src: "/chair2.png",
+        alt: "Chair 2",
+        width: 312,
+        height: 312,
+      },
+      paragraph: "Library Stool Chair",
+      amount: 20,
+      classNameCart: "bg-gray-300",
+      isDiv: false,
+      link: "/product/chair2",
+    },
+    {
+      id: 4,
+      Image1: {
+        src: "/sofa2.png",
+        alt: "Sofa 2",
+        width: 312,
+        height: 312,
+      },
+      paragraph: "Library Stool Chair",
+      amount: 20,
+      classNameCart: "bg-gray-300",
+      isDiv: false,
+      link: "/product/sofa2",
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+  // Products Data for Our Product Section
+  const products = [
+    {
+      id: 1,
+      title: "Library Stool Chair",
+      price: 20,
+      image: "/01.jpg",
+      isNew: true,
+    },
+    {
+      id: 2,
+      title: "Pink Sofa",
+      price: 20,
+      originalPrice: 30,
+      image: "/02.jpg",
+      isSale: true,
+    },
+    { id: 3, title: "Popular Chair", price: 20, image: "/03.jpg" },
+    {
+      id: 4,
+      title: "Sofa",
+      price: 20,
+      originalPrice: 30,
+      image: "/04.jpg",
+      isSale: true,
+    },
+    { id: 5, title: "Wing Chair", price: 20, image: "/05.jpg", isNew: true },
+    {
+      id: 6,
+      title: "Grey Chair",
+      price: 20,
+      originalPrice: 30,
+      image: "/06.jpg",
+      isSale: true,
+    },
+    { id: 7, title: "Modern Chair", price: 20, image: "/07.jpg" },
+    { id: 8, title: "White Chair", price: 20, image: "/08.jpg" },
+  ];
+
+  // Top Categories Data
+  const categoriesData = [
+    {
+      name: "Wing Chair",
+      products: "3,584 Products",
+      image: "/05.jpg",
+    },
+    {
+      name: "Wooden Chair",
+      products: "157 Products",
+      image: "/08.jpg",
+    },
+    {
+      name: "Desk Chair",
+      products: "154 Products",
+      image: "/09.png",
+    },
+  ];
+
+  return (
+    <div className="w-full max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-8">
+      {/* Hero Section */}
+      <Hero />
+
+      {/* Sponsors Section */}
+      <Sponsors />
+
+      {/* Featured Products Section */}
+      <section className="my-12 sm:my-16 lg:my-20">
+        <FeaturedProducts heading="Featured Products" cards={cardBuild} />
+      </section>
+
+      {/* Top Categories Section */}
+      <section className="my-20 sm:my-24 lg:my-28">
+        <Categories title="Top Categories" categories={categoriesData} />
+      </section>
+
+      {/* Popular Styles Section */}
+      <section className="my-20 sm:my-24 lg:my-28">
+        <PopularStyles />
+      </section>
+
+      {/* Our Product Section */}
+      <section className="my-20 sm:my-24 lg:my-28">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center text-[#1C1B1F] mb-8">
+          Our Products
+        </h2>
+        <ProductList products={products} />
+      </section>
     </div>
   );
 }
